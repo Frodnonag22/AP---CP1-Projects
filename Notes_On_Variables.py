@@ -37,3 +37,5 @@ scope = "the part of a program where the variable can be used"
 globalVariable = "able to be accessed anywhere in your code"
 # put your variables at the beginning of the code
 localVariable = "created in a function. It only exists in the function" 
+
+print("EEEYAYAYAYA")
