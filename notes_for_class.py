@@ -88,9 +88,39 @@ print(15%5)
 print("")
 print((2-1)*3+4%3)
 print("")
-print("Order of Operations")
+print("Order of Operations (PEMDAS!!)")
+print("")
+print("Assignment Operator")
+num = 2
+print(num)
+
+num = num + 2
+print(num)
+
+num += 2
+print(num)
+
+num //= 2
+print(num)
+
+num %= 2
+print(num)
+
+#An expression is any mathmatical thing.
+
+fav = input("What is your fav number ")
+
+print(f"{float(fav)**2} is {fav} squared")
+
+pi = 3.141592
+
+print(int(pi))
+print(round(pi))
 print("")
 print("")
 print("")
 print("")
 print("")
+print("")
+print("")
+print("WEEEEE")
