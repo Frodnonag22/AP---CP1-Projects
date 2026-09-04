@@ -1,4 +1,4 @@
-#Andrew Petersen
+#Andrew Petersen SDLC notes
 
 print("SDLC is Software Development Life Cycle")
 print("This is the repeatable steps of software development")

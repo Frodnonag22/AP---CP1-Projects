@@ -1,4 +1,4 @@
-#Andrew Petersen
+#Andrew Petersen int notes
 
 print("Integer - A whole number")
 print("num = 75 <== just write the number")

@@ -1,4 +1,4 @@
-#Andrew Petersen comments notes
+#Andrew Petersen inputs and outputs notes
 
 print('Good Morning!') # This is an output "print("hello")" would not work
 print("This is programming 1")
