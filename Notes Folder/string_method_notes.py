@@ -1,4 +1,4 @@
-#Andrew Petersen, String Method Notes
+"""#Andrew Petersen, String Method Notes
 
 sentence = "The quick brown fox jumps over the lazy dog"
 # Methods DO NOT change the variable
@@ -13,10 +13,12 @@ new_sentence = sentence.replace(word, new_word)
 print(new_sentence)
 print(sentence.find("over"))
 
-first_name = input("wat ur first name: ").strip().title()
+first_name = input("wat ur first name: ").strip().title() # .strip removes spaces
 last_name = input("wat ur last name: ").strip().title()
+
 first_separated = first_name.split()
 first_fixed = "".join(first_separated)  
+
 last_separated = last_name.split() # .split splits into a list and if there is a word in it then it gets rid of that word
 last_fixed = "".join(last_separated) # "".join removed the excess spaces that the troller did
 full_name = first_fixed.title() + " " + last_fixed.title()
@@ -40,3 +42,13 @@ print(sentence.upper()) #all uppercase
 print(sentence.capitalize()) # capitalized the first letter
 print(sentence.title()) # capitalized all first letters
 #      ^ object  ^ action
+
+#Formatted string
+print(f"Hello {first_fixed} {last_fixed} welcome to my program")"""
+
+letter = input("Give me a letter: ")
+letter = letter[0].lower()
+number_value = ord(letter) # grabs the numeric value of each character
+number_value += 2
+new_letter = chr(number_value)
+print(f"Your letter was {letter} now it is {new_letter}")
