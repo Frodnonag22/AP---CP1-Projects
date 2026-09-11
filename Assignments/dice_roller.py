@@ -11,7 +11,7 @@ print(f"WARNING: PLEASE DO NOT ROLL TOO MANY DICE")
 while play == True:
     while True:
         try:
-            dice_rolled = int(input(f"What dice would you like to roll? (Traditional D&D dice, D4, D6, D8, D10, D12, D20. If you want a D100, just roll 10 D10s): D"))
+            dice_rolled = int(input(f"What dice would you like to roll? (Traditional D&D dice, D4, D6, D8, D10, D12, D20. If you want a D100, just roll 2 D10s): D"))
         except:
             print("Thats not a valid number!")
         else:
@@ -24,7 +24,7 @@ while play == True:
             print("Thats not a valid number!")
         else:
             break
-    if dice_rolled == 10 and times_rolled == 10:
+    if dice_rolled == 10 and times_rolled == 2:
         print(f"D100 roll was: {random.randint(1, 100)}")
     elif dice_rolled == 20 or dice_rolled == 12 or dice_rolled == 10 or dice_rolled == 8 or dice_rolled == 6 or dice_rolled == 4:
         while roll_number < times_rolled + 1:
