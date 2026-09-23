@@ -1,5 +1,8 @@
 # Andrew Petersen Free Time 
 
+import sys
+import time
+
 # Text Styles
 reset = "\033[0m"
 bold ="\033[1m"
@@ -73,6 +76,8 @@ def matrix_rainbow_typewriter(text: str, delay: float = 0.04) -> None:
         time.sleep(delay)
         
     print(reset)
+
+#This is when you can write your code!
 
 matrix_rainbow_typewriter("Decryption pipeline processing... Access Granted.")
 print()
