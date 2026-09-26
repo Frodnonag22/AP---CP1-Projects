@@ -31,6 +31,11 @@ bg_cyan = "\033[46m"
 bg_white = "\033[47m"
 bg_dark_grey = "\033[100m"
 
+print(f"I am going to ask you for 3 numbers, these are for the color of your choice")
+color_1 = input("Give me a number between 0 and 255: ")
+color_2 = input("Give me a number between 0 and 255: ")
+color_3 = input("Give me a number between 0 and 255: ")
+
 def smoothly_simulated_blink(text: str, loop_count: int = 4) -> None:
     """Guaranteed cross-platform blinking text using carriage returns (\r)."""
     print(f"{bold}Initializing Simulated Hardware Alert Loop...{reset}")
@@ -77,7 +82,25 @@ def matrix_rainbow_typewriter(text: str, delay: float = 0.04) -> None:
         
     print(reset)
 
-def matrix_typewriter(text: str, delay: float = 0.04) -> None:
+def choice_matrix_typewriter(text: str, delay: float = 0.04) -> None:
+    """Prints text character by character cycling through an RGB color wheel."""
+    # Custom 24-bit RGB neon spectrum
+    colors = [
+        (color_1, color_2, color_3),
+    ]
+    
+    for i, char in enumerate(text):
+        r, g, b = colors[i % len(colors)]
+        # Construct dynamic 24-bit color string
+        color_code = f"\033[1;38;2;{r};{g};{b}m"
+        
+        sys.stdout.write(f"{color_code}{char}")
+        sys.stdout.flush()
+        time.sleep(delay)
+        
+    print(reset)
+
+def white_matrix_typewriter(text: str, delay: float = 0.04) -> None:
     """Prints text character by character cycling through an RGB color wheel."""
     # Custom 24-bit RGB neon spectrum
     colors = [
@@ -98,7 +121,9 @@ def matrix_typewriter(text: str, delay: float = 0.04) -> None:
 #This is when you can write your code!
 
 matrix_rainbow_typewriter("Decryption pipeline processing... Access Granted.")
-matrix_typewriter(f"Decryption pipeline processing... Access Denied.")
+white_matrix_typewriter(f"Decryption pipeline processing... Access Denied.")
+choice_matrix_typewriter(f"Decryption pipeline processing... Access.")
 print()
 smoothly_simulated_blink("Unauthorized database intrusion detected!")
 print()
+
