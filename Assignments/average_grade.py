@@ -1,7 +1,7 @@
 #Andrew Petersen average grade
 
 print("If any questions are not apliccable then put 100. DO NOT PUT THE PERCENTAGE SIGN OR TYPE OUT THE NUMBER")
-
+ 
 while True:
     try:
         grade_1 = int(input("What is your grade in your first class? "))
