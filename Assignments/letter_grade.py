@@ -81,9 +81,9 @@ while keep_going:
             else:
                 break
         if keep_go > 2:
-            print(f"{red}Input must be one or 2{reset}")
+            print(f"{red}Input must be 1 or 2{reset}")
         elif keep_go < 0:
-            print(f"{red}Input must be one or 2{reset}")
+            print(f"{red}Input must be 1 or 2{reset}")
         else:
             end = "yes"
     if keep_go == 1:
