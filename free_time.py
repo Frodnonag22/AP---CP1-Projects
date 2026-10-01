@@ -100,12 +100,10 @@ def choice_matrix_typewriter(text: str, delay: float = 0.04) -> None:
         
     print(reset)
 
-def white_matrix_typewriter(text: str, delay: float = 0.04) -> None:
+def slow_print(text: str, delay: float):
     """Prints text character by character cycling through an RGB color wheel."""
     # Custom 24-bit RGB neon spectrum
-    colors = [
-        (255, 255, 255),
-    ]
+    colors = [(255, 255, 255)]
     
     for i, char in enumerate(text):
         r, g, b = colors[i % len(colors)]
@@ -121,7 +119,7 @@ def white_matrix_typewriter(text: str, delay: float = 0.04) -> None:
 #This is when you can write your code!
 
 matrix_rainbow_typewriter("Decryption pipeline processing... Access Granted.")
-white_matrix_typewriter(f"Decryption pipeline processing... Access Denied.")
+slow_print(f"Decryption pipeline processing... Access Denied.", 0.005)
 choice_matrix_typewriter(f"Decryption pipeline processing... Access.")
 print()
 smoothly_simulated_blink("Unauthorized database intrusion detected!")
