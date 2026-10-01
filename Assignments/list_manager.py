@@ -5,7 +5,7 @@ red = "\033[31m"
 green = "\033[32m"
 yellow = "\033[33m"
 blue = "\033[34m"
-white = "\033[35m"
+magenta = "\033[35m"
 cyan = "\033[36m"
 white = "\033[37m"
 reset = "\033[0m"
@@ -35,7 +35,7 @@ while True:
         shop_list.append(added_item)
     elif action == 2: 
         while True:
-            removed_item = input(f"{blue}What item do you want to remove (type 'cancel' to cancel): \n{cyan}").strip().title()
+            removed_item = input(f"\n{blue}What item do you want to remove (type 'cancel' to cancel): \n{cyan}").strip().title()
             if removed_item in shop_list:
                 print(f"{green}Removing item...{reset}")
                 shop_list.remove(removed_item)
@@ -60,8 +60,9 @@ while True:
             else:
                 print(f"{red}Item not in list{reset}")
     elif action == 4: 
+        print()
         for item in shop_list:
-            print(f"{black}{item},{reset}")
+            print(f"{magenta}{item}{reset}")
     elif action == 5:
         print("Exiting")
         break
