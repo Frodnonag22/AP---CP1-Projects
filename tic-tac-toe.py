@@ -92,6 +92,7 @@ while play_again:
         else:
             end = "yes"
     if pa_input == 2:
+        cool_print(f"Bruh...", 1)
         play_again = False
     else:
         print("Rebooting game", end="")
