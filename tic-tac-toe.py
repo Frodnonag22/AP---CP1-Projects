@@ -37,6 +37,8 @@ print(board)
 
 play_again = True
 
+player = 1
+
 while play_again:
     taken = []
     condition = 1
@@ -59,9 +61,11 @@ while play_again:
             else:
                 taken.append(choice)
                 choices.remove(choice)
-                if condition % 2 == 1:
+                if player % 2 == 1:
                     choices.insert(choice-1, f"{green}X{reset}")
+                    player += 1
                 else:
+                    player += 1
                     choices.insert(choice-1, f"{blue}O{reset}")
                 board = f"       │       │\n   {choices[0]}   │   {choices[1]}   │   {choices[2]}\n       │       │\n───────┼───────┼───────\n       │       │\n   {choices[3]}   │   {choices[4]}   │   {choices[5]}\n       │       │\n───────┼───────┼───────\n       │       │\n   {choices[6]}   │   {choices[7]}   │   {choices[8]}\n       │       │"
                 break
