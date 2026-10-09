@@ -28,5 +28,6 @@ if factorial_number == 0:
     print("0!")
 
 print(f"{factorial_number}! = ", end="")
-print(" x ".join(map(str, new_numbers)), end=" = ")
-print(math.factorial(factorial_number))
+print(math.factorial(factorial_number), end=" or: ")
+print(" x ".join(map(str, new_numbers)), end="")
+print()
