@@ -100,9 +100,9 @@ def choice_matrix_typewriter(text: str, delay: float = 0.04) -> None:
         
     print(reset)
 
-def cool_print(text: str, delay: float):
+def cool_print(text: str, delay: float): # cool_print(text, delay)
     """Prints text character by character cycling through an RGB color wheel."""
-    # Custom 24-bit RGB neon spectrum
+    # Custom 24-bit RGB neon spectrum if wanted
     colors = [(255, 255, 255)]
     
     for i, char in enumerate(text):
@@ -116,6 +116,13 @@ def cool_print(text: str, delay: float):
         
     print(reset)
 
+def cooler_print(text: str, delay: float):
+    for i, character in enumerate(text):
+        sys.stdout.write(f"{character}") # prints one character at a time
+        sys.stdout.flush() # makes sure that the text doesnt print all at once
+        time.sleep(delay) # delays time between each character print
+
+
 #This is when you can write your code!
 
 matrix_rainbow_typewriter("Decryption pipeline processing... Access Granted.")
@@ -123,5 +130,5 @@ cool_print(f"Decryption pipeline processing... Access Denied.", 0.05)
 choice_matrix_typewriter(f"Decryption pipeline processing... Access.")
 print()
 smoothly_simulated_blink("Unauthorized database intrusion detected!")
-print()
+cooler_print("TTERTERTERETRETERTERTRe", 0.02)
 
