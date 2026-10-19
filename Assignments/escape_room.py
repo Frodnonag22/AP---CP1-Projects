@@ -61,7 +61,7 @@ while playing:
     name = cool_input("What is your name: ", 0.1)
     cool_print(f"You are trapped within my escape room. . . {red}{name}{green}", 0.1)
     cool_print("You have 10 guesses to get my code. . .", 0.1)
-    if name == "Admin":
+    if "Admin" in name:
         cool_print(f"Since you are the admin, you get the code. . .", 0.1)
         cool_print(f"The code is. . . {code}", 0.1)
     guess = cool_input(f"The code is 9 digits. . . 6 letters. . . 3 numbers. . . {red}What is the code: {cyan}", 0.1).strip()
