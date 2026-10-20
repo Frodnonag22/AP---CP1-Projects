@@ -117,8 +117,8 @@ def cool_print(text: str, delay: float): # cool_print(text, delay)
     print(reset)
 
 def cooler_print(text: str, delay: float):
-    for i, character in enumerate(text):
-        sys.stdout.write(f"{character}") # prints one character at a time
+    for char in text:
+        sys.stdout.write(f"{char}") # prints one character at a time
         sys.stdout.flush() # makes sure that the text doesnt print all at once
         time.sleep(delay) # delays time between each character print
 
