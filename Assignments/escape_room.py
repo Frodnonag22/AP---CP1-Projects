@@ -50,7 +50,7 @@ def cool_input(prompt: str, delay: float):
   return input()
 
 def clear_terminal():
-    os.system('cls' if os.name == 'nt' else 'clear')
+    print("\033[H\033[J", end="")
 
 time.sleep(1)
 

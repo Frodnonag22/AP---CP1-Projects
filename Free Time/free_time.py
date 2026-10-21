@@ -13,28 +13,18 @@ blink = "\033[5m"
 invert = "\033[7m"
 strike = "\033[9m"
 
-black = "\033[30m"
-red = "\033[31m"
-green = "\033[32m"
-yellow = "\033[33m"
-blue = "\033[34m"
-magenta = "\033[35m"
-cyan = "\033[36m"
+red = "\033[38;5;196m"
+orange = "\033[38;5;208m"
+yellow = "\033[38;5;226m"
+yel_green = "\033[38;5;118m"
+green = "\033[38;5;46m"
+cyan = "\033[38;5;51m"
+blue = "\033[38;5;21m"
+purple = "\033[38;5;129m"
+magenta = "\033[38;5;201m"
+pink = "\033[38;5;213m"
+black = "\033[38;5;16m"
 white = "\033[37m"
-
-bg_red = "\033[41m"
-bg_green = "\033[42m"
-bg_yellow = "\033[43m"
-bg_blue = "\033[44m"
-bg_magenta = "\033[45m"
-bg_cyan = "\033[46m"
-bg_white = "\033[47m"
-bg_dark_grey = "\033[100m"
-
-print(f"I am going to ask you for 3 numbers, these are for the color of your choice")
-color_1 = input("Give me a number between 0 and 255: ")
-color_2 = input("Give me a number between 0 and 255: ")
-color_3 = input("Give me a number between 0 and 255: ")
 
 def smoothly_simulated_blink(text: str, loop_count: int = 4) -> None:
     """Guaranteed cross-platform blinking text using carriage returns (\r)."""
@@ -59,7 +49,7 @@ print(f"{red}This text is red!{reset}")
 print(f"{green}This text is green!{reset}")
 print(f"Normal text, {yellow}yellow text{reset}, normal text.")
 
-def matrix_rainbow_typewriter(text: str, delay: float = 0.04) -> None:
+def matrix_rainbow_typewriter(text: str, delay: float = 0.04):
     """Prints text character by character cycling through an RGB color wheel."""
     # Custom 24-bit RGB neon spectrum
     colors = [
@@ -82,6 +72,52 @@ def matrix_rainbow_typewriter(text: str, delay: float = 0.04) -> None:
         
     print(reset)
 
+def less_cool_print(text: str, delay: float): # cool_print(text, delay)
+    """Prints text character by character cycling through an RGB color wheel."""
+    # Custom 24-bit RGB neon spectrum if wanted
+    colors = [(255, 255, 255)]
+    
+    for i, char in enumerate(text):
+        r, g, b = colors[i % len(colors)]
+        # Construct dynamic 24-bit color string
+        color_code = f"\033[1;38;2;{r};{g};{b}m"
+        
+        sys.stdout.write(f"{color_code}{char}")
+        sys.stdout.flush()
+        time.sleep(delay)
+        
+    print(reset)
+
+# Use these in every assignmet now
+def cool_print(text: str, delay: float):
+    for char in text:
+        sys.stdout.write(f"{char}") # prints one character at a time
+        sys.stdout.flush() # makes sure that the text doesnt print all at once
+        time.sleep(delay) # delays time between each character print
+
+def cool_input(prompt: str, delay: float):
+  for character in prompt:
+    sys.stdout.write(f"{character}")
+    sys.stdout.flush()
+    time.sleep(delay)
+  return input()
+
+def clear_terminal():
+    print("\033[H\033[J", end="")
+
+#This is when you can write your code!
+
+matrix_rainbow_typewriter("Decryption pipeline processing... Access Granted.")
+less_cool_print(f"Decryption pipeline processing... Access Denied.", 0.05)
+print()
+smoothly_simulated_blink("Unauthorized database intrusion detected!")
+cool_print("TTERTERTERETRETERTERTRe", 0.02)
+
+print(f"I am going to ask you for 3 numbers, these are for the color of your choice")
+color_1 = input("Give me a number between 0 and 255: ")
+color_2 = input("Give me a number between 0 and 255: ")
+color_3 = input("Give me a number between 0 and 255: ")
+
 def choice_matrix_typewriter(text: str, delay: float = 0.04) -> None:
     """Prints text character by character cycling through an RGB color wheel."""
     # Custom 24-bit RGB neon spectrum
@@ -100,35 +136,4 @@ def choice_matrix_typewriter(text: str, delay: float = 0.04) -> None:
         
     print(reset)
 
-def cool_print(text: str, delay: float): # cool_print(text, delay)
-    """Prints text character by character cycling through an RGB color wheel."""
-    # Custom 24-bit RGB neon spectrum if wanted
-    colors = [(255, 255, 255)]
-    
-    for i, char in enumerate(text):
-        r, g, b = colors[i % len(colors)]
-        # Construct dynamic 24-bit color string
-        color_code = f"\033[1;38;2;{r};{g};{b}m"
-        
-        sys.stdout.write(f"{color_code}{char}")
-        sys.stdout.flush()
-        time.sleep(delay)
-        
-    print(reset)
-
-def cooler_print(text: str, delay: float):
-    for char in text:
-        sys.stdout.write(f"{char}") # prints one character at a time
-        sys.stdout.flush() # makes sure that the text doesnt print all at once
-        time.sleep(delay) # delays time between each character print
-
-
-#This is when you can write your code!
-
-matrix_rainbow_typewriter("Decryption pipeline processing... Access Granted.")
-cool_print(f"Decryption pipeline processing... Access Denied.", 0.05)
 choice_matrix_typewriter(f"Decryption pipeline processing... Access.")
-print()
-smoothly_simulated_blink("Unauthorized database intrusion detected!")
-cooler_print("TTERTERTERETRETERTERTRe", 0.02)
-
