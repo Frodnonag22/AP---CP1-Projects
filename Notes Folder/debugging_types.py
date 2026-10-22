@@ -21,14 +21,12 @@
 # 6: Rewriting the bug
 #   Re-create the bug to fix it
 
+# 7: Tracing by hand
+#   Going step by step, writing what heappens in the code
+
+# 8: ASK FOR HELP
+#   Self explanatory
+
 # Helpful Coder Websites
 #   W3Schools
 #   Geeks for Geeks
-
-import random
-
-index = random.randint(0, 7)
-
-siblings = ["Katie", "Alex", "Andrew", "Vienna", "Tia", "Treyson", "Xavier", "Jake"]
-
-print(siblings[index])
