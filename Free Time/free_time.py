@@ -26,7 +26,7 @@ pink = "\033[38;5;213m"
 black = "\033[38;5;16m"
 white = "\033[37m"
 
-def smoothly_simulated_blink(text: str, loop_count: int = 4) -> None:
+def smoothly_simulated_blink(text: str, loop_count: int = 4):
     """Guaranteed cross-platform blinking text using carriage returns (\r)."""
     print(f"{bold}Initializing Simulated Hardware Alert Loop...{reset}")
     
@@ -72,7 +72,7 @@ def matrix_rainbow_typewriter(text: str, delay: float = 0.04):
         
     print(reset)
 
-def less_cool_print(text: str, delay: float): # cool_print(text, delay)
+def less_cool_print(text: str, delay: float = 0.05): # cool_print(text, delay)
     """Prints text character by character cycling through an RGB color wheel."""
     # Custom 24-bit RGB neon spectrum if wanted
     colors = [(255, 255, 255)]
@@ -89,13 +89,13 @@ def less_cool_print(text: str, delay: float): # cool_print(text, delay)
     print(reset)
 
 # Use these in every assignmet now
-def cool_print(text: str, delay: float):
+def cool_print(text: str, delay: float = 0.05):
     for char in text:
         sys.stdout.write(f"{char}") # prints one character at a time
         sys.stdout.flush() # makes sure that the text doesnt print all at once
         time.sleep(delay) # delays time between each character print
 
-def cool_input(prompt: str, delay: float):
+def cool_input(prompt: str, delay: float = 0.05):
   for character in prompt:
     sys.stdout.write(f"{character}")
     sys.stdout.flush()
@@ -111,7 +111,7 @@ matrix_rainbow_typewriter("Decryption pipeline processing... Access Granted.")
 less_cool_print(f"Decryption pipeline processing... Access Denied.", 0.05)
 print()
 smoothly_simulated_blink("Unauthorized database intrusion detected!")
-cool_print("TTERTERTERETRETERTERTRe", 0.02)
+cool_print("TTERTERTERETRETERTERTRe", 0.05)
 
 print(f"I am going to ask you for 3 numbers, these are for the color of your choice")
 color_1 = input("Give me a number between 0 and 255: ")
