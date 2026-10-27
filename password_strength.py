@@ -3,11 +3,13 @@
 import time
 import sys
 
-def cool_print(text: str, delay: float = 0.05):
+def cool_print(text: str, delay: float = 0.05, end = "\n"):
     for char in text:
-        sys.stdout.write(f"{char}") # prints one character at a time
-        sys.stdout.flush() # makes sure that the text doesnt print all at once
-        time.sleep(delay) # delays time between each character print
+        sys.stdout.write(f"{char}")
+        sys.stdout.flush()
+        time.sleep(delay)
+    sys.stdout.write(end)
+    sys.stdout.flush()
 
 def cool_input(prompt: str, delay: float = 0.05):
   for character in prompt:
@@ -19,46 +21,62 @@ def cool_input(prompt: str, delay: float = 0.05):
 def clear_terminal():
     print("\033[H\033[J", end="")
 
-password = cool_input("What is your password? ")
+clear_terminal()
 
-# SET capitals to list ["A" - "Z"]
-# CHECK IF letter in capital is in password
-    # SET cap_in_pass to 1
-# ELSE
-    # # SET cap_in_pass to 0
+while True:
+    password = cool_input("What is your password? ")
+    if password == "":
+        cool_print("You didn't input anything!")
+    else:
+        break
 
-# SET lowercases to list ["a" - "z"]
-# CHECK IF letter in lowercase is in password
-    # SET low_in_pass to 1
-# ELSE
-    # # SET low_in_pass to 0
+capitals = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+for capital in password:
+    if capital in capitals:
+        cap_in_pass = 1
+        break
+    else:
+        cap_in_pass = 0
 
-# CHECK IF the length of password is greater than or equal to 8
-    # SET len_of_pass to 1
-# ELSE
-    # SET len_of_pass to 0
+lowercases = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+for lowercase in password:
+    if lowercase in lowercases:
+        low_in_pass = 1
+        break
+    else:
+        low_in_pass = 0
 
-# SET numbers to list ["0" - "9"]
-# CHECK IF number in password
-    # SET num_in_pass to 1
-# ELSE
-    # SET num_in_pass to 0
+numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
+for number in password:
+    if number in numbers:
+        num_in_pass = 1
+        break
+    else:
+        num_in_pass = 0
 
-# SET symbols to list ["!" - "?"]
-# CHECK IF number in password
-    # SET sym_in_pass to 1
-# ELSE
-    # SET sym_in_pass to 0
+symbols = ["(", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "+", "-", "=", "[", "]", "{", "}", "|", ";", ":", ", ", ".", "<", ">", "?", ")", " "]
+for symbol in password:
+    if symbol in symbols:
+        sym_in_pass = 1
+        break
+    else:
+        sym_in_pass = 0
 
-# CALCULATE pass_strength = cap_in_pass + low_in_pass + len_of_pass + num_in_pass + sym_in_pass
+if len(password) >= 8:
+   len_of_pass = 1
+else:
+   len_of_pass = 0
 
-# DISPLAY "password is" (no end so it doesn't go on new line)
-# CHECK IF pass_strength is 1 OR 5
-    # DISPLAY "very" (no end so it doesn't go on new line)
+pass_strength = cap_in_pass + low_in_pass + len_of_pass + num_in_pass + sym_in_pass
 
-# CHECK IF pass_strength is 3
-    # DISPLAY "medium"
-# ELSE IF pass_strength is more than 3
-    # DISPLAY "strong"
-# ELSE 
-    # DISPLAY "weak"
+cool_print("Password is ", end="")
+
+if pass_strength == 1 or pass_strength == 5:
+    cool_print("very ", end="")
+
+if pass_strength == 3:
+    cool_print("medium strength.")
+elif pass_strength > 3:
+    cool_print("strong.")
+else:
+    cool_print("weak.")

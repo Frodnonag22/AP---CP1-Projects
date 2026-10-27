@@ -89,11 +89,13 @@ def less_cool_print(text: str, delay: float = 0.05): # cool_print(text, delay)
     print(reset)
 
 # Use these in every assignmet now
-def cool_print(text: str, delay: float = 0.05):
+def cool_print(text: str, delay: float = 0.05, end = "\n"):
     for char in text:
-        sys.stdout.write(f"{char}") # prints one character at a time
-        sys.stdout.flush() # makes sure that the text doesnt print all at once
-        time.sleep(delay) # delays time between each character print
+        sys.stdout.write(f"{char}")
+        sys.stdout.flush()
+        time.sleep(delay)
+    sys.stdout.write(end)
+    sys.stdout.flush()
 
 def cool_input(prompt: str, delay: float = 0.05):
   for character in prompt:
