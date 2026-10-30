@@ -110,10 +110,10 @@ def clear_terminal():
 #This is when you can write your code!
 
 matrix_rainbow_typewriter("Decryption pipeline processing... Access Granted.")
-less_cool_print(f"Decryption pipeline processing... Access Denied.", 0.05)
+less_cool_print(f"Decryption pipeline processing... Access Denied.")
 print()
 smoothly_simulated_blink("Unauthorized database intrusion detected!")
-cool_print("TTERTERTERETRETERTERTRe", 0.05)
+cool_print("TTERTERTERETRETERTERTRe")
 
 print(f"I am going to ask you for 3 numbers, these are for the color of your choice")
 color_1 = input("Give me a number between 0 and 255: ")
