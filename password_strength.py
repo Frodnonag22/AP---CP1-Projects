@@ -30,6 +30,9 @@ while True:
     else:
         break
 
+if password == "49DSwFqyrjSS#":
+    cool_print("Bro! That's my password!")
+
 capitals = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 for capital in password:
     if capital in capitals:

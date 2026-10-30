@@ -2,6 +2,7 @@
 
 import sys
 import time
+import random
 
 # Text Styles
 reset = "\033[0m"
@@ -107,6 +108,16 @@ def cool_input(prompt: str, delay: float = 0.05):
 def clear_terminal():
     print("\033[H\033[J", end="")
 
+def typer_print(text: str, end = "\n"):
+    for char in text:
+        delay = random.uniform(0.001, 0.15)
+        sys.stdout.write(f"{char}")
+        sys.stdout.flush()
+        time.sleep(delay)
+    sys.stdout.write(end)
+    sys.stdout.flush()
+
+typer_print("A well-crafted paragraph is a small building block of writing that focuses on a single main idea. It starts with a clear topic sentence to introduce that idea, provides supporting details or examples in the middle, and wraps up with a smooth closing thought. When sentences flow together logically with good transitions, the whole block becomes easy to read and understand.")
 #This is when you can write your code!
 
 matrix_rainbow_typewriter("Decryption pipeline processing... Access Granted.")
@@ -120,7 +131,7 @@ color_1 = input("Give me a number between 0 and 255: ")
 color_2 = input("Give me a number between 0 and 255: ")
 color_3 = input("Give me a number between 0 and 255: ")
 
-def choice_matrix_typewriter(text: str, delay: float = 0.04) -> None:
+def choice_matrix_typewriter(text: str, delay: float = 0.04): 
     """Prints text character by character cycling through an RGB color wheel."""
     # Custom 24-bit RGB neon spectrum
     colors = [
