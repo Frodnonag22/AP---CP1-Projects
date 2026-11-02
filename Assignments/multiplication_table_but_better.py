@@ -3,7 +3,7 @@
 while True:
     while True:
         try:
-            choice = int(input())
+            choice = int(input("Gimme a number"))
         except:
             print("Thats not a number!")
         else:
