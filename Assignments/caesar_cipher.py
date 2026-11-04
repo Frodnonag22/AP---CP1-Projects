@@ -4,14 +4,17 @@ message = input("Type the message message you would like to encode: ").lower()
 
 letters = "0abcdefghijklmnopqrstuvwxyz"
 
-def forward(name="hello world", shift=1):
-    for char in name:
+def encode(message="hello world", shift=1):
+    """This encodes the message"""
+    for char in message:
         number = letters.find(char)
         if number == -1:
             print(" ", end=" ")
         else:
             number += shift
-            print(number, end=" ")
+            if number > 26:
+                number -= 26
+    
 
 
-forward(message, 0)
+encode(message, 5)
