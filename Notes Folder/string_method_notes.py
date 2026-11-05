@@ -1,4 +1,4 @@
-"""#Andrew Petersen, String Method Notes
+#Andrew Petersen, String Method Notes
 
 sentence = "The quick brown fox jumps over the lazy dog"
 # Methods DO NOT change the variable
@@ -44,11 +44,11 @@ print(sentence.title()) # capitalized all first letters
 #      ^ object  ^ action
 
 #Formatted string
-print(f"Hello {first_fixed} {last_fixed} welcome to my program")"""
+print(f"Hello {first_fixed} {last_fixed} welcome to my program")
 
 letter = input("Give me a letter: ")
 letter = letter[0].lower()
-number_value = ord(letter) # grabs the numeric value of each character
+number_value = ord(letter) # grabs the numeric value of each character 
 number_value += 2
 new_letter = chr(number_value)
 print(f"Your letter was {letter} now it is {new_letter}")
