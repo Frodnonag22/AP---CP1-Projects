@@ -1,7 +1,5 @@
 # AP Ceaser Cypher
 
-
-
 while True:
     user_choice = input("Would you like to encode or decode a message: ").lower().strip()
     user_message = input("What is the message: ").strip()
@@ -14,8 +12,6 @@ while True:
             break
         except:
             print("Invalid input, try again")
-
-
 
     def encode(encoding, shift=1):
         """This encodes the message"""
