@@ -110,10 +110,16 @@ def clear_terminal():
 
 def typer_print(text: str, end = "\n"):
     for char in text:
-        delay = random.uniform(0.001, 0.15)
-        sys.stdout.write(f"{char}")
-        sys.stdout.flush()
-        time.sleep(delay)
+        if char == " ":
+            delay = random.uniform(0.01, 0.5)
+            sys.stdout.write(f"{char}")
+            sys.stdout.flush()
+            time.sleep(delay)
+        else:
+            delay = random.uniform(0.01, 0.05)
+            sys.stdout.write(f"{char}")
+            sys.stdout.flush()
+            time.sleep(delay)
     sys.stdout.write(end)
     sys.stdout.flush()
 
