@@ -1,8 +1,10 @@
 import turtle
 
 t = turtle.Turtle()
+screen = turtle.Screen()
+screen.bgcolor("black")
 
-t.speed('fastest')
+t.speed(0)
 t.width(50)
 
 distance = 0
