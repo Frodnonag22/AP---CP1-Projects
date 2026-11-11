@@ -104,7 +104,7 @@ finish_line() # Sets up the race
 race_setup()
 
 for c in (red, orange, yellow, green, blue, indigo, purple): # Makes the turtles turtle paced
-    c.speed(1)
+    c.speed(6)
 
 one = t.Turtle()
 two = t.Turtle()
