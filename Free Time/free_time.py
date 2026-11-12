@@ -1,8 +1,8 @@
 # Andrew Petersen Free Time
 
-import sys
-import time
-import random
+import sys as s
+import time as t
+import random as r
 
 # Text Styles
 reset = "\033[0m"
@@ -33,14 +33,14 @@ def smoothly_simulated_blink(text: str, loop_count: int = 4):
     
     for _ in range(loop_count):
         # Write text and remain on the same line string block
-        sys.stdout.write(f"\r{bold}{red}⚠️ ALERT: {text}{reset}")
-        sys.stdout.flush()
-        time.sleep(0.4)
+        s.stdout.write(f"\r{bold}{red}⚠️ ALERT: {text}{reset}")
+        s.stdout.flush()
+        t.sleep(0.4)
         
         # Completely obscure the line by writing empty spaces over the string length
-        sys.stdout.write("\r" + " " * (len(text) + 10))
-        sys.stdout.flush()
-        time.sleep(0.3)
+        s.stdout.write("\r" + " " * (len(text) + 10))
+        s.stdout.flush()
+        t.sleep(0.3)
         
     # Leave final state cleanly visible 
     print(f"\r{bold}{red}⚠️  ALERT: {text}{reset}")
@@ -67,9 +67,9 @@ def matrix_rainbow_typewriter(text: str, delay: float = 0.04):
         # Construct dynamic 24-bit color string
         color_code = f"\033[1;38;2;{r};{g};{b}m"
         
-        sys.stdout.write(f"{color_code}{char}")
-        sys.stdout.flush()
-        time.sleep(delay)
+        s.stdout.write(f"{color_code}{char}")
+        s.stdout.flush()
+        t.sleep(delay)
         
     print(reset)
 
@@ -83,45 +83,48 @@ def less_cool_print(text: str, delay: float = 0.05): # cool_print(text, delay)
         # Construct dynamic 24-bit color string
         color_code = f"\033[1;38;2;{r};{g};{b}m"
         
-        sys.stdout.write(f"{color_code}{char}")
-        sys.stdout.flush()
-        time.sleep(delay)
+        s.stdout.write(f"{color_code}{char}")
+        s.stdout.flush()
+        t.sleep(delay)
         
     print(reset)
 
 # Use these in every assignmet now
-def cool_print(text: str, delay: float = 0.05, end = "\n"):
+def cool_print(text: str = "", delay: float = 0.05, end = "\n"):
+    """Types out text slowly"""
     for char in text:
-        sys.stdout.write(f"{char}")
-        sys.stdout.flush()
-        time.sleep(delay)
-    sys.stdout.write(end)
-    sys.stdout.flush()
+        s.stdout.write(f"{char}")
+        s.stdout.flush()
+        t.sleep(delay)
+    s.stdout.write(end)
+    s.stdout.flush()
 
 def cool_input(prompt: str, delay: float = 0.05):
+  """Types out inputs slowly"""
   for character in prompt:
-    sys.stdout.write(f"{character}")
-    sys.stdout.flush()
-    time.sleep(delay)
+    s.stdout.write(f"{character}")
+    s.stdout.flush()
+    t.sleep(delay)
   return input()
 
 def clear_terminal():
+    """clears the terminal"""
     print("\033[H\033[J", end="")
 
 def typer_print(text: str, end = "\n"):
     for char in text:
         if char == " ":
-            delay = random.uniform(0.01, 0.5)
-            sys.stdout.write(f"{char}")
-            sys.stdout.flush()
-            time.sleep(delay)
+            delay = r.uniform(0.01, 0.5)
+            s.stdout.write(f"{char}")
+            s.stdout.flush()
+            t.sleep(delay)
         else:
-            delay = random.uniform(0.01, 0.05)
-            sys.stdout.write(f"{char}")
-            sys.stdout.flush()
-            time.sleep(delay)
-    sys.stdout.write(end)
-    sys.stdout.flush()
+            delay = r.uniform(0.01, 0.05)
+            s.stdout.write(f"{char}")
+            s.stdout.flush()
+            t.sleep(delay)
+    s.stdout.write(end)
+    s.stdout.flush()
 
 typer_print("A well-crafted paragraph is a small building block of writing that focuses on a single main idea. It starts with a clear topic sentence to introduce that idea, provides supporting details or examples in the middle, and wraps up with a smooth closing thought. When sentences flow together logically with good transitions, the whole block becomes easy to read and understand.")
 #This is when you can write your code!
@@ -149,9 +152,9 @@ def choice_matrix_typewriter(text: str, delay: float = 0.04):
         # Construct dynamic 24-bit color string
         color_code = f"\033[1;38;2;{r};{g};{b}m"
         
-        sys.stdout.write(f"{color_code}{char}")
-        sys.stdout.flush()
-        time.sleep(delay)
+        s.stdout.write(f"{color_code}{char}")
+        s.stdout.flush()
+        t.sleep(delay)
         
     print(reset)
 
