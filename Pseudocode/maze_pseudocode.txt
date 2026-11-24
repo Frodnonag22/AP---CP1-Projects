@@ -1,0 +1,47 @@
+AP Maze Pseudocode
+
+GET turtle FROM python library
+GET random FROM python library
+
+FUNCTION setup_screen
+    #Job: create the screen and the drawing turtle
+    SET turtle screen to bg_color
+    SET turtle color to maze_color
+
+FUNCTION carve_path(grid)
+    # Job: mark a path from the top-left to the bottom-right
+
+FUNCTION draw_column(x, y)
+    # Job: draw a column
+
+FUNCTION draw_row(x, y)
+    # Job: draw a row
+    REPEAT for each row
+        REPEAT for each space in row
+            IF space is 1
+                THEN DRAW a vertical line
+                THEN turtle lift pen
+                THEN turtle goes to next line
+            ELSE
+                THEN turtle lift pen
+                THEN turtle goes to next line
+        
+
+FUNCTION generate_maze
+    # Job: build the grid, carve the path, then fill in random walls
+    DRAW vertical walls
+    DRAW horizontal walls with entrance and exit
+    CALL draw_row
+    CALL draw_column
+
+FUNCTION draw_maze(pen, grid)
+    # Job: draw every cell in the grid
+
+FUNCTION main
+    # Job: put it all together
+    CALL
+    CALL
+    CALL
+    CALL
+    CALL
+    CALL
